@@ -12,18 +12,21 @@ public class Main {
         books[5] = new Book("HarryPotter und der Halbblutprinz", "J.K. Rowling", "978-0-4397-9132-8");
         books[6] = new Book("HarryPotter und die Heiligtümer des Todes", "J.K. Rowling", "978-0-5450-2937-7");
 
-        Library allHarryPotterBooks = new Library(books);
-        System.out.println(allHarryPotterBooks.toString());
+        Library library = new Library(books);
+
+
+        System.out.println(library.toString());
         System.out.println();
-        allHarryPotterBooks.deleteBook("HarryPotter und der Stein der Weisen");
+        library.deleteBook("HarryPotter und der Stein der Weisen");
+        library.deleteBook("HarryPotter und die Heiligtümer des Todes");
 
-        System.out.println(allHarryPotterBooks.toString());
+        System.out.println(library.toString());
         System.out.println();
 
-        allHarryPotterBooks.addBook("HarryPotter und das neue Buch 1", "Ingo Becker", "978-0-0347-6956-9");
-        allHarryPotterBooks.addBook("HarryPotter und das neue Buch 2", "Ingo Becker", "978-0-6789-5623-9");
+        library.addBook("HarryPotter und das neue Buch 1", "Ingo Becker", "978-0-0347-6956-9");
+        library.addBook("HarryPotter und das neue Buch 2", "Ingo Becker", "978-0-6789-5623-9");
 
-        System.out.println(allHarryPotterBooks.toString());
+        System.out.println(library.toString());
 
 
     }
