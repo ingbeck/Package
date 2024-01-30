@@ -18,7 +18,7 @@ public class Main {
         //create instance 'library' of class 'Library' with Array 'books'
         Library library = new Library(books);
 
-        //create more objects of books for further use
+        //create more objects of 'Book' for further use
         Book deleteBook = books[2];
         Book addBook = new Book("Harry Potter und das neue Buch 2", "Ingo Becker", "978-0-6789-5623-9");
 

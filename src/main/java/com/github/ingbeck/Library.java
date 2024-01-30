@@ -3,12 +3,15 @@ package com.github.ingbeck;
 import java.util.Arrays;
 
 public class Library {
+    //Attributes
     private Book[] books;
 
+    //Constructor
     public Library(Book[] books){
         this.books = books;
     }
 
+    //Getter / Setter
     public void setBooks(Book[] books) {
         this.books = books;
     }
@@ -18,6 +21,8 @@ public class Library {
     }
 
 
+    //method for checking, if a book exists in 'books'
+    //searching by its title
     public boolean isInLibrary(String title){
 
         boolean bookFound = false;
@@ -30,6 +35,8 @@ public class Library {
         return bookFound;
     }
 
+    //overloaded method for checking, if a book exists in 'books'
+    //searching by the exact same book
     public boolean isInLibrary(Book bookToDelete){
         boolean bookFound = false;
 
@@ -41,6 +48,7 @@ public class Library {
         return bookFound;
     }
 
+    //method for deleteing an element of 'books' by its title
     public void deleteBook(String title){
 
         if(isInLibrary(title)){
@@ -60,6 +68,7 @@ public class Library {
 
     }
 
+    //overloaded method for deleting an exact element of 'books'
     public void deleteBook(Book bookToDelete){
 
         if(isInLibrary(bookToDelete)){
@@ -77,6 +86,7 @@ public class Library {
 
     }
 
+    //method to add an element of 'books' to 'library' by creating a new object of 'Book'
     public void addBook(String title, String author, String isbn){
         Book[] newBooks = new Book[books.length +1];
         int count = 0;
@@ -89,6 +99,7 @@ public class Library {
         this.books = newBooks;
     }
 
+    //overloaded method to add an element of 'books' to 'library' by giving an object of 'Book'
     public void addBook(Book newBook){
         Book[] newBooks = new Book[books.length +1];
         int count = 0;
