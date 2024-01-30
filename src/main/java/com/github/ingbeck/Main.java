@@ -10,6 +10,8 @@ public class Main {
         books[4] = new Book("HarryPotter und der Orden des Phönix", "J.K. Rowling", "978-1-8554-9682-8");
         books[5] = new Book("HarryPotter und der Halbblutprinz", "J.K. Rowling", "978-0-4397-9132-8");
         books[6] = new Book("HarryPotter und die Heiligtümer des Todes", "J.K. Rowling", "978-0-5450-2937-7");
-        System.out.println(hp1.toString());
+
+        Library allHarryPotterBooks = new Library(books);
+        System.out.println(allHarryPotterBooks.toString());
     }
 }
