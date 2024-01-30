@@ -3,17 +3,20 @@ package com.github.ingbeck;
 import java.util.Objects;
 
 public class Book {
+    //Attributes
     private String title;
     private String author;
     private String isbn;
 
 
+    //Constructor
     public Book(String title, String author, String isbn){
         this.title = title;
         this.author = author;
         this.isbn = isbn;
     }
 
+    //Getter / Setter
     public String getAuthor() {
         return author;
     }
