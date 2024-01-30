@@ -18,5 +18,13 @@ public class Main {
         allHarryPotterBooks.deleteBook("HarryPotter und der Stein der Weisen");
 
         System.out.println(allHarryPotterBooks.toString());
+        System.out.println();
+
+        allHarryPotterBooks.addBook("HarryPotter und das neue Buch 1", "Ingo Becker", "978-0-0347-6956-9");
+        allHarryPotterBooks.addBook("HarryPotter und das neue Buch 2", "Ingo Becker", "978-0-6789-5623-9");
+
+        System.out.println(allHarryPotterBooks.toString());
+
+
     }
 }
