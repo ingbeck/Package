@@ -17,18 +17,38 @@ public class Library {
         return books;
     }
 
-    public void deleteBook(String title){
-        Book[] newBooks = new Book[books.length -1];
-        int count = 0;
+
+    public boolean isInLibrary(String title){
+
+        boolean bookFound = false;
 
         for (Book book : books) {
-            if (!book.getTitle().equals(title)) {
-                newBooks[count] = book;
-                count++;
+            if (book.getTitle().equals(title)) {
+                bookFound = true;
             }
         }
-        this.books = newBooks;
+        return bookFound;
     }
+
+    public void deleteBook(String title){
+        if(isInLibrary(title)){
+            Book[] newBooks = new Book[books.length -1];
+            int count = 0;
+
+            for (Book book : books) {
+                if (!book.getTitle().equals(title)) {
+                    newBooks[count] = book;
+                    count++;
+                }
+            }
+            this.books = newBooks;
+        }else{
+            System.out.println("\nBook [" + title + "] not found in library!\n");
+        }
+
+    }
+
+
 
     public void addBook(String title, String author, String isbn){
         Book[] newBooks = new Book[books.length +1];
