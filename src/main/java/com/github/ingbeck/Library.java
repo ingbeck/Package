@@ -30,7 +30,19 @@ public class Library {
         return bookFound;
     }
 
+    public boolean isInLibrary(Book bookToDelete){
+        boolean bookFound = false;
+
+        for (Book book : books) {
+            if (book.equals(bookToDelete)) {
+                bookFound = true;
+            }
+        }
+        return bookFound;
+    }
+
     public void deleteBook(String title){
+
         if(isInLibrary(title)){
             Book[] newBooks = new Book[books.length -1];
             int count = 0;
@@ -48,6 +60,25 @@ public class Library {
 
     }
 
+    public void deleteBook(Book bookToDelete){
+
+        if(isInLibrary(bookToDelete)){
+            Book[] newBooks = new Book[books.length -1];
+            int count = 0;
+
+            for (Book book : books) {
+                if (!book.equals(bookToDelete)) {
+                    newBooks[count] = book;
+                    count++;
+                }
+            }
+            this.books = newBooks;
+        }else{
+            //System.out.println("\nBook [" + title + "] not found in library!\n");
+        }
+
+    }
+
     public void addBook(String title, String author, String isbn){
         Book[] newBooks = new Book[books.length +1];
         int count = 0;
@@ -57,6 +88,18 @@ public class Library {
             count++;
         }
         newBooks[newBooks.length-1] = new Book(title, author, isbn);
+        this.books = newBooks;
+    }
+
+    public void addBook(Book newBook){
+        Book[] newBooks = new Book[books.length +1];
+        int count = 0;
+
+        for (Book book : books) {
+            newBooks[count] = book;
+            count++;
+        }
+        newBooks[newBooks.length-1] = newBook;
         this.books = newBooks;
     }
 

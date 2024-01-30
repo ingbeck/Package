@@ -13,18 +13,20 @@ public class Main {
         books[6] = new Book("HarryPotter und die Heiligtümer des Todes", "J.K. Rowling", "978-0-5450-2937-7");
 
         Library library = new Library(books);
-
+        Book deleteBook = books[2];
+        Book addBook = new Book("HarryPotter und das neue Buch 2", "Ingo Becker", "978-0-6789-5623-9");
 
         System.out.println(library.toString());
         System.out.println();
         library.deleteBook("HarryPotter und der Stein der Weisen");
+        library.deleteBook(deleteBook);
         library.deleteBook("HarryPotter und die Heiligtümer des Todes");
-
+        library.deleteBook("Schönes Buch");
         System.out.println(library.toString());
         System.out.println();
 
         library.addBook("HarryPotter und das neue Buch 1", "Ingo Becker", "978-0-0347-6956-9");
-        library.addBook("HarryPotter und das neue Buch 2", "Ingo Becker", "978-0-6789-5623-9");
+        library.addBook(addBook);
 
         System.out.println(library.toString());
 
