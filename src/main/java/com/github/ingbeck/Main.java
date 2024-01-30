@@ -2,6 +2,7 @@ package com.github.ingbeck;
 
 public class Main {
     public static void main(String[] args) {
+
         Book[] books = new Book[7];
         books[0] = new Book("HarryPotter und der Stein der Weisen", "J.K. Rowling", "978-0-5450-6967-0");
         books[1] = new Book("HarryPotter und die Kammer des Schreckens", "J.K. Rowling", "978-0-4390-6486-6");
@@ -12,6 +13,10 @@ public class Main {
         books[6] = new Book("HarryPotter und die Heiligtümer des Todes", "J.K. Rowling", "978-0-5450-2937-7");
 
         Library allHarryPotterBooks = new Library(books);
+        System.out.println(allHarryPotterBooks.toString());
+        System.out.println();
+        allHarryPotterBooks.deleteBook("HarryPotter und der Stein der Weisen");
+
         System.out.println(allHarryPotterBooks.toString());
     }
 }

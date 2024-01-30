@@ -17,6 +17,20 @@ public class Library {
         return books;
     }
 
+    public void deleteBook(String name){
+        Book[] newBooks = new Book[books.length -1];
+        int count = 0;
+
+        for (Book book : books) {
+            if (!book.getTitle().equals(name)) {
+                newBooks[count] = book;
+                count++;
+            }
+        }
+        this.books = newBooks;
+
+    }
+
     @Override
     public String toString() {
         return "Library{" +
